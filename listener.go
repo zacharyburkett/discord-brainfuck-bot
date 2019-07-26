@@ -54,7 +54,11 @@ func run(message *discordgo.Message) {
 }
 
 func help(message *discordgo.Message) {
-
+	discord.ChannelMessageSendEmbed(message.ChannelID, &discordgo.MessageEmbed{
+		Author:      &discordgo.MessageEmbedAuthor{},
+		Title:       "Brainfuck VM Help",
+		Description: "`>r/run <program>` - Runs a given brainfuck program\n`>h/help` - Displays this help",
+	})
 }
 
 // ============================================================
